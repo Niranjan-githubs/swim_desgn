@@ -62,6 +62,7 @@ const ProjectMap = () => {
         { name: "Madurai", lat: 9.9252, lng: 78.1198, state: "Tamil Nadu" },
         { name: "Trichy", lat: 10.7905, lng: 78.7047, state: "Tamil Nadu" },
         { name: "Tirunelveli", lat: 8.7139, lng: 77.6990, state: "Tamil Nadu" },
+        { name: "Erode", lat: 11.3421, lng: 77.7282, state: "Tamil Nadu" },
 
         // Andhra Pradesh
         { name: "Chittoor", lat: 13.2172, lng: 79.1003, state: "Andhra Pradesh" },
@@ -76,6 +77,9 @@ const ProjectMap = () => {
         { name: "Palakkad", lat: 10.7867, lng: 76.6548, state: "Kerala" },
         { name: "Thrissur", lat: 10.5276, lng: 76.2144, state: "Kerala" },
         { name: "Kochi", lat: 9.9312, lng: 76.2711, state: "Kerala" },
+
+        // Puducherry
+        { name: "Puducherry", lat: 11.9416, lng: 79.8083, state: "Puducherry" },
 
         // Andaman
         { name: "Havelock Island", lat: 11.967, lng: 92.981, state: "Andaman & Nicobar" }

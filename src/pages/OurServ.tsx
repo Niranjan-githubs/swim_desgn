@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, Droplets, Shield, Wrench, Palette, Users, ArrowRight, Waves, Sparkles, Star, Phone, Mail, MapPin, CheckCircle, ArrowLeft } from 'lucide-react';
+import { ChevronRight, Droplets, Shield, Wrench, Palette, Users, ArrowRight, Waves, Sparkles, Star, Phone, Mail, MapPin, CheckCircle } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 interface Service {
   id: number;
@@ -22,10 +24,6 @@ const OurServ = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  const handleBackToHome = () => {
-    navigate('/');
-  };
 
   const services: Service[] = [
     {
@@ -153,19 +151,10 @@ const OurServ = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Back Button */}
-      <div className="fixed top-6 left-6 z-50">
-        <button
-          onClick={handleBackToHome}
-          className="group bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-700 px-4 py-3 rounded-2xl font-semibold transition-all duration-300 hover:bg-white hover:shadow-lg hover:scale-105 flex items-center space-x-2"
-        >
-          <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
-          
-        </button>
-      </div>
+      <Header />
 
       {/* Hero Section */}
-      <div className="relative pt-24 pb-16 px-6">
+      <div className="relative pt-32 pb-16 px-6">
         <div className="max-w-6xl mx-auto text-center">
           {/* Main Title */}
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 mb-6 leading-tight">
@@ -274,6 +263,8 @@ const OurServ = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 };

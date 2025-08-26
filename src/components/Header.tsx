@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Mail, Menu, X, Waves } from 'lucide-react';
+import { Phone, Mail, Menu, X, Waves, Home } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
@@ -28,6 +28,17 @@ const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const scrollToHome = () => {
+    navigate('/');
+    setTimeout(() => {
+      const element = document.getElementById('home');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
       {/* Centered Rounded Navbar */}
@@ -42,7 +53,7 @@ const Header = () => {
           <div className="flex items-center justify-between px-3 sm:px-4 md:px-6 py-3 sm:py-4 w-full">
             {/* Logo */}
             <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 flex-shrink-0">
-              <button onClick={() => navigate('/')} className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
+              <button onClick={scrollToHome} className="flex items-center space-x-2 sm:space-x-3 md:space-x-4">
                 <img
                   src="/logo.png"
                   alt="Veni Enterprises Logo"
@@ -55,6 +66,10 @@ const Header = () => {
 
             {/* Desktop Navigation - Centered */}
             <div className="hidden lg:flex items-center space-x-4 md:space-x-6 flex-shrink-0 absolute left-1/2 transform -translate-x-1/2">
+              <button onClick={scrollToHome} className="text-gray-600 hover:text-gray-900 transition-colors font-semibold text-sm md:text-base py-2 whitespace-nowrap font-sans flex items-center space-x-1">
+                <Home className="w-4 h-4" />
+                <span>Home</span>
+              </button>
               <button onClick={() => navigateToPage('aboutus')} className="text-gray-600 hover:text-gray-900 transition-colors font-semibold text-sm md:text-base py-2 whitespace-nowrap font-sans">
                 About Us
               </button>
@@ -94,6 +109,10 @@ const Header = () => {
             {isMenuOpen && (
               <div className="lg:hidden absolute top-full left-0 right-0 mt-2 bg-slate-900/95 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl mx-2">
                 <div className="flex flex-col p-4 space-y-3">
+                  <button onClick={scrollToHome} className="text-left text-gray-300 hover:text-white transition-colors font-medium py-3 px-3 rounded-lg hover:bg-white/10 flex items-center space-x-2">
+                    <Home className="w-4 h-4" />
+                    <span>Home</span>
+                  </button>
                   <button onClick={() => navigateToPage('aboutus')} className="text-left text-gray-300 hover:text-white transition-colors font-medium py-3 px-3 rounded-lg hover:bg-white/10">
                     About Us
                   </button>
@@ -122,7 +141,7 @@ const Header = () => {
             <div className="flex items-center justify-between h-14 sm:h-16 relative">
               {/* Logo */}
               <div className="flex items-center space-x-2 sm:space-x-3">
-                <button onClick={() => navigate('/')} className="flex items-center space-x-2 sm:space-x-3">
+                <button onClick={scrollToHome} className="flex items-center space-x-2 sm:space-x-3">
                   <img
                     src="/logo.png"
                     alt="Swim Designers Logo"
@@ -134,6 +153,10 @@ const Header = () => {
 
               {/* Desktop Navigation - Centered */}
               <div className="hidden md:flex items-center space-x-6 lg:space-x-8 absolute left-1/2 transform -translate-x-1/2">
+                <button onClick={scrollToHome} className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm lg:text-base flex items-center space-x-1">
+                  <Home className="w-4 h-4" />
+                  <span>Home</span>
+                </button>
                 <button onClick={() => navigateToPage('aboutus')} className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm lg:text-base">
                   About Us
                 </button>
@@ -173,6 +196,10 @@ const Header = () => {
         {isMenuOpen && (
           <div className="md:hidden absolute top-full left-0 right-0 mt-2 bg-slate-900/95 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl mx-2">
             <div className="flex flex-col p-4 space-y-3">
+              <button onClick={scrollToHome} className="text-left text-gray-300 hover:text-white transition-colors font-medium py-3 px-3 rounded-lg hover:bg-white/10 flex items-center space-x-2">
+                <Home className="w-4 h-4" />
+                <span>Home</span>
+              </button>
               <button onClick={() => navigateToPage('aboutus')} className="text-left text-gray-300 hover:text-white transition-colors font-medium py-3 px-3 rounded-lg hover:bg-white/10">
                 About Us
               </button>

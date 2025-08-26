@@ -1,14 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const AboutUs = () => {
   const navigate = useNavigate();
-
-  const handleBackToHome = () => {
-    navigate('/');
-  };
 
   const features = [
     {
@@ -37,16 +34,7 @@ const AboutUs = () => {
 
   return (
     <div className="bg-white text-black overflow-hidden">
-      {/* Back Button */}
-      <div className="fixed top-6 left-6 z-50">
-        <button
-          onClick={handleBackToHome}
-          className="group bg-white/90 backdrop-blur-sm border border-gray-200 text-gray-700 px-4 py-3 rounded-2xl font-semibold transition-all duration-300 hover:bg-white hover:shadow-lg hover:scale-105 flex items-center space-x-2"
-        >
-          <ArrowLeft className="w-5 h-5 transition-transform group-hover:-translate-x-1" />
-        
-        </button>
-      </div>
+      <Header />
 
       {/* Hero with Background Image */}
       <section className="relative h-screen flex items-center justify-center text-center text-white">
@@ -178,6 +166,8 @@ const AboutUs = () => {
           </button>
         </motion.div>
       </section>
+
+      <Footer />
     </div>
   );
 };
