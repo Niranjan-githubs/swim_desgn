@@ -45,6 +45,7 @@ const Footer = () => {
   const EMAIL_SERVICE_ID = 'service_0jdmqqt'; // Replace with your EmailJS service ID
   const EMAIL_TEMPLATE_ID = 'template_iwcojgg'; // Replace with your EmailJS template ID
   const EMAIL_PUBLIC_KEY = 'izJ9flFrw4YXA0ChA'; // Replace with your EmailJS public key
+  // Cache busting timestamp: 2025-08-26 20:13:25
 
   // EmailJS is initialized in index.html
 
