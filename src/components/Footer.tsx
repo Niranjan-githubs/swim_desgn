@@ -474,5 +474,6 @@ const Footer = () => {
     </footer>
   );
 };
+  {/* Bottom Section */}
 
 export default Footer;
