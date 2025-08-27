@@ -442,14 +442,134 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold text-gray-900">Pool Types</h4>
               <ul className="space-y-3">
-                <li className="text-gray-600 text-sm">Infinity Edge Pools</li>
-                <li className="text-gray-600 text-sm">Rooftop Pools</li>
-                <li className="text-gray-600 text-sm">Overflow Pools</li>
-                <li className="text-gray-600 text-sm">Skimmer Pools</li>
-                <li className="text-gray-600 text-sm">Spa Pools & Jacuzzis</li>
-                <li className="text-gray-600 text-sm">Kids Pools</li>
-                <li className="text-gray-600 text-sm">Olympic Pools</li>
-                <li className="text-gray-600 text-sm">Plunge Pools</li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        const element = document.getElementById('infinity-edge-pools');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Infinity Edge Pools
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        const element = document.getElementById('rooftop-pools');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Rooftop Pools
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        const element = document.getElementById('overflow-pools');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Overflow Pools
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        const element = document.getElementById('skimmer-pools');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Skimmer Pools
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        const element = document.getElementById('spa-pools-and-jacuzzis');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Spa Pools & Jacuzzis
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        const element = document.getElementById('kids-pools');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Kids Pools
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        const element = document.getElementById('olympic-and-semi-olympic-pools');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Olympic Pools
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        const element = document.getElementById('plunge-pools');
+                        if (element) {
+                          element.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Plunge Pools
+                  </button>
+                </li>
               </ul>
             </div>
           </div>
@@ -464,10 +584,6 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-gray-500 text-sm">
               © 2025 Swim Designers. All rights reserved.
-            </div>
-            
-            <div className="text-gray-500 text-sm">
-              Designed by <span className="text-red-600 font-semibold">Ravvyn</span>
             </div>
           </div>
         </div>

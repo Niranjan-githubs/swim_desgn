@@ -119,7 +119,7 @@ const Top = () => {
     const isEven = index % 2 === 0;
     
     return (
-      <div className="py-20 px-6">
+      <div id={pool.name.toLowerCase().replace(/\s+/g, '-').replace(/[&]/g, 'and')} className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
             {/* Text Content */}
