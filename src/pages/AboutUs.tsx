@@ -51,10 +51,10 @@ const AboutUs = () => {
           className="relative z-10"
         >
           <h1 className="text-6xl sm:text-7xl font-extrabold tracking-tight">
-            About Swim Designers
+            Swim Designers
           </h1>
           <p className="mt-6 text-xl max-w-3xl mx-auto font-light">
-            Crafting pools that redefine luxury, engineering, and lifestyle.
+            Crafting pools that redefine luxury engineering and lifestyle.
           </p>
         </motion.div>
       </section>

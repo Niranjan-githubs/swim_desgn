@@ -58,7 +58,7 @@ const Portfolio = () => {
     },
     {
       id: 5,
-      title: "Spa Pools & Jacuzzi",
+      title: "Spa Pools",
       category: "Wellness",
       image: "/Topools/spa & jaccuzi.avif",
       description: "Luxurious spa pools and jacuzzi systems for ultimate relaxation and wellness experience.",
@@ -151,33 +151,11 @@ const Portfolio = () => {
       transform: scale(1.2);
     }
     
-    /* Infinite scroll animation */
-    @keyframes scroll {
-      0% {
-        transform: translateX(0);
-      }
-      100% {
-        transform: translateX(-50%);
-      }
-    }
-    
-    .animate-scroll-right {
-      animation: scroll 15s linear infinite;
-    }
-    
-    .animate-scroll-right:hover {
-      animation-play-state: paused;
-    }
-    
     /* Responsive adjustments */
     @media (max-width: 480px) {
       .swiper-slide {
         width: 240px;
         height: 288px;
-      }
-      
-      .animate-scroll-right {
-        animation-duration: 10s;
       }
     }
     
@@ -186,10 +164,6 @@ const Portfolio = () => {
         width: 260px;
         height: 312px;
       }
-      
-      .animate-scroll-right {
-        animation-duration: 12s;
-      }
     }
     
     @media (min-width: 769px) and (max-width: 1024px) {
@@ -197,20 +171,12 @@ const Portfolio = () => {
         width: 300px;
         height: 360px;
       }
-      
-      .animate-scroll-right {
-        animation-duration: 15s;
-      }
     }
     
     @media (min-width: 1025px) {
       .swiper-slide {
         width: 350px;
         height: 420px;
-      }
-      
-      .animate-scroll-right {
-        animation-duration: 18s;
       }
     }
   `;
@@ -358,74 +324,7 @@ const Portfolio = () => {
           </Swiper>
         </div>
 
-        {/* Infinite Scroll Pool Types */}
-        <div className="py-16 sm:py-20 md:py-24 px-4">
-          <div className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 border border-blue-100 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-lg max-w-6xl mx-auto relative overflow-hidden">
-            {/* Background decorative elements */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 right-0 w-40 h-40 bg-gradient-to-br from-purple-400/20 to-pink-400/20 rounded-full blur-3xl"></div>
-              <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-gradient-to-br from-indigo-400/15 to-blue-400/15 rounded-full blur-2xl"></div>
-            </div>
-            
-            <div className="relative z-10">
-              <div className="text-center mb-8">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Our Pool Types</h3>
-                <p className="text-gray-600 text-xs sm:text-sm">From infinity edges to rooftop oases, we specialize in every type of pool design</p>
-              </div>
-              
-              <div className="relative overflow-hidden">
-                {/* Gradient overlays for smooth fade effect */}
-                <div className="absolute left-0 top-0 bottom-0 w-8 sm:w-12 md:w-20 bg-gradient-to-r from-blue-50 via-indigo-50 to-transparent z-10"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-8 sm:w-12 md:w-20 bg-gradient-to-l from-purple-50 via-indigo-50 to-transparent z-10"></div>
-                
-                <div className="flex items-center space-x-6 sm:space-x-8 md:space-x-12 animate-scroll-right">
-                  {/* First set of pool types */}
-                  {[
-                    "Infinity Edge Pool",
-                    "Roof Top Pool",
-                    "Overflow Pools",
-                    "Skimmer Pools",
-                    "Spa Pools & Jacuzzi",
-                    "Olympics / Semi Olympic Pools",
-                    "Plunge Pools"
-                  ].map((poolType, index) => (
-                    <div key={`first-${index}`} className="flex-shrink-0 group">
-                      <div className="flex items-center justify-center h-12 sm:h-14 md:h-16 px-4 sm:px-6 md:px-8 bg-white/90 backdrop-blur-sm border border-blue-200/50 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white relative overflow-hidden">
-                        {/* Colorful gradient background on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="relative z-10 text-sm sm:text-base md:text-lg font-bold tracking-wide text-gray-800 group-hover:text-blue-700 transition-all duration-300">
-                          {poolType}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                  
-                  {/* Duplicate set for seamless infinite scroll */}
-                  {[
-                    "Infinity Edge Pool",
-                    "Roof Top Pool",
-                    "Overflow Pools",
-                    "Skimmer Pools",
-                    "Spa Pools & Jacuzzi",
-                    "Olympics / Semi Olympic Pools",
-                    "Plunge Pools"
-                  ].map((poolType, index) => (
-                    <div key={`second-${index}`} className="flex-shrink-0 group">
-                      <div className="flex items-center justify-center h-12 sm:h-14 md:h-16 px-4 sm:px-6 md:px-8 bg-white/90 backdrop-blur-sm border border-blue-200/50 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white relative overflow-hidden">
-                        {/* Colorful gradient background on hover */}
-                        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <div className="relative z-10 text-sm sm:text-base md:text-lg font-bold tracking-wide text-gray-800 group-hover:text-blue-700 transition-all duration-300">
-                          {poolType}
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

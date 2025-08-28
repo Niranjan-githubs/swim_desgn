@@ -63,7 +63,7 @@ const Top = () => {
     },
     {
      
-      name: "Spa Pools & Jacuzzis",
+      name: "Spa Pools & Jacuzzi",
       description: "Compact, heated pools designed for relaxation and therapy. These intimate spaces provide therapeutic benefits and create perfect spots for relaxation and social gatherings.",
       bestFor: "Homes, hotels, and wellness centers.",
       features: [
@@ -191,28 +191,22 @@ const Top = () => {
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium mb-8">
-            Luxury Designs, Precision Engineering, and Lasting Beauty. At Swim Designers, we create pools that go beyond function — they are lifestyle statements.
-          </p>
-
-          {/* Description */}
-          <p className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8">
-            Whether you dream of a rooftop oasis, a family-friendly recreation spot, or an Olympic-standard 
-            facility, our diverse range of pool types ensures the perfect fit for your space, budget, and vision.
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed font-medium mb-8 text-center">
+           At Swim Designers, we create pools that go beyond function — they are lifestyle statements.
           </p>
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">8+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">8+</div>
               <div className="text-gray-600 font-medium">Pool Types</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-cyan-600 mb-2">100%</div>
+              <div className="text-4xl font-bold text-cyan-600 mb-2">100%</div>
               <div className="text-gray-600 font-medium">Customizable</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">∞</div>
+              <div className="text-4xl font-bold text-emerald-600 mb-2">∞</div>
               <div className="text-gray-600 font-medium">Possibilities</div>
             </div>
           </div>

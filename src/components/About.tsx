@@ -26,7 +26,7 @@ const About = () => {
     },
     {
       image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face",
-      text: "Veni Ent designed, They are very good in quality, sticking to design, timely delivery, and prompt after sales service support."
+      text: "Veni Ent designed. They are very good in quality, sticking to design, timely delivery, and prompt after sales service support."
     },
     {
       image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop&crop=face",

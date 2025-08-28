@@ -56,20 +56,6 @@ const OurServ = () => {
     },
     {
       id: 3,
-      title: "Accessories & Equipment",
-      description: "Enhance your pool experience with high-quality accessories and advanced equipment solutions. From lighting to automation, we provide everything you need for the ultimate pool experience.",
-      features: [
-        "Advanced LED lighting systems",
-        "High-efficiency filtration equipment",
-        "Smart automation and control systems",
-        "Safety features and accessories"
-      ],
-      image: "/gallery/compressed/white-swimming-water-background-beauty.jpg",
-      color: "from-purple-600 to-indigo-500",
-      gradient: "from-purple-500/20 to-indigo-500/20"
-    },
-    {
-      id: 4,
       title: "Waterproofing Solutions",
       description: "Protect your investment with advanced waterproofing techniques and long-lasting protection. Our specialized solutions ensure your pool remains leak-free and structurally sound for years to come.",
       features: [
@@ -81,6 +67,20 @@ const OurServ = () => {
       image: "/gallery/compressed/ocean-travel-modern-nobody-infinity.jpg",
       color: "from-orange-600 to-red-500",
       gradient: "from-orange-500/20 to-red-500/20"
+    },
+    {
+      id: 4,
+      title: "Accessories & Equipment",
+      description: "Enhance your pool experience with high-quality accessories and advanced equipment solutions. From lighting to automation, we provide everything you need for the ultimate pool experience.",
+      features: [
+        "Advanced LED lighting systems",
+        "High-efficiency filtration equipment",
+        "Smart automation and control systems",
+        "Safety features and accessories"
+      ],
+      image: "/gallery/compressed/white-swimming-water-background-beauty.jpg",
+      color: "from-purple-600 to-indigo-500",
+      gradient: "from-purple-500/20 to-indigo-500/20"
     },
     {
       id: 5,
@@ -101,8 +101,11 @@ const OurServ = () => {
   const ServiceSection = ({ service, index }: { service: Service; index: number }) => {
     const isEven = index % 2 === 0;
     
+    // Create ID for the service section
+    const serviceId = service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    
     return (
-      <div className="py-20 px-6">
+      <div id={serviceId} className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center ${isEven ? '' : 'lg:grid-flow-col-dense'}`}>
             {/* Text Content */}
@@ -173,7 +176,7 @@ const OurServ = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">280+</div>
               <div className="text-gray-600 font-medium">Pools Built</div>
             </div>
             <div className="text-center">
@@ -222,20 +225,7 @@ const OurServ = () => {
               </p>
 
               {/* Contact Info */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-                <div className="flex items-center justify-center space-x-3 text-gray-700">
-                  <Phone className="w-6 h-6 text-blue-600" />
-                  <span className="text-lg">+91 91762 03070</span>
-                </div>
-                <div className="flex items-center justify-center space-x-3 text-gray-700">
-                  <Mail className="w-6 h-6 text-blue-600" />
-                  <span className="text-lg">venienter@gmail.com</span>
-                </div>
-                <div className="flex items-center justify-center space-x-3 text-gray-700">
-                  <MapPin className="w-6 h-6 text-blue-600" />
-                  <span className="text-lg">3564,Rajammal Nagar,TNHB,Ayappakam,Chennai-600077</span>
-                </div>
-              </div>
+              
               
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

@@ -6,7 +6,7 @@ const ProjectMap = () => {
 
   const projectStats = [
     { number: '15+', label: 'Cities Covered', icon: MapPin, color: 'text-blue-600' },
-    { number: '50+', label: 'Projects Completed', icon: Star, color: 'text-green-600' },
+    { number: '280+', label: 'Projects Completed', icon: Star, color: 'text-green-600' },
     { number: '5', label: 'States Served', icon: MapPin, color: 'text-purple-600' }
   ];
 
@@ -63,6 +63,9 @@ const ProjectMap = () => {
         { name: "Trichy", lat: 10.7905, lng: 78.7047, state: "Tamil Nadu" },
         { name: "Tirunelveli", lat: 8.7139, lng: 77.6990, state: "Tamil Nadu" },
         { name: "Erode", lat: 11.3421, lng: 77.7282, state: "Tamil Nadu" },
+        { name: "Pudukottai", lat: 10.3826, lng: 78.8214, state: "Tamil Nadu" },
+        { name: "Sivakasi", lat: 9.4491, lng: 77.7975, state: "Tamil Nadu" },
+        { name: "Kumbakonam", lat: 10.9595, lng: 79.3782, state: "Tamil Nadu" },
 
         // Andhra Pradesh
         { name: "Chittoor", lat: 13.2172, lng: 79.1003, state: "Andhra Pradesh" },

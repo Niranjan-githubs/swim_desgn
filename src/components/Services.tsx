@@ -32,7 +32,7 @@ const Services = () => {
       key: 'experience'
     },
     { 
-      number: '50+', 
+      number: '280+', 
       label: 'Pools Completed', 
       icon: Award,
       key: 'projects'
@@ -133,7 +133,7 @@ const Services = () => {
             const interval = setInterval(() => {
               setScrambledNumbers({
                 experience: scrambleText('15+'),
-                projects: scrambleText('50+'),
+                projects: scrambleText('280+'),
                 engineers: scrambleText('15+'),
                 development: scrambleText('600K+')
               });
@@ -144,7 +144,7 @@ const Services = () => {
               clearInterval(interval);
               setScrambledNumbers({
                 experience: '15+',
-                projects: '50+',
+                projects: '280+',
                 engineers: '15+',
                 development: '600K+'
               });

@@ -177,6 +177,10 @@ const Footer = () => {
 
   const navigateToPage = (pageName: string) => {
     navigate(`/${pageName}`);
+    // Scroll to top of the page after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
   };
 
   return (
@@ -430,11 +434,101 @@ const Footer = () => {
             <div className="space-y-4">
               <h4 className="text-lg font-semibold text-gray-900">Services</h4>
               <ul className="space-y-3">
-                <li className="text-gray-600 text-sm">Pool Design & Consultation</li>
-                <li className="text-gray-600 text-sm">Construction & Installation</li>
-                <li className="text-gray-600 text-sm">Accessories & Equipment</li>
-                <li className="text-gray-600 text-sm">Waterproofing Solutions</li>
-                <li className="text-gray-600 text-sm">Maintenance & Repairs</li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/ourserv');
+                      setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('pool-design-consultation');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Pool Design & Consultation
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/ourserv');
+                      setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('construction-installation');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Construction & Installation
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/ourserv');
+                      setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('waterproofing-solutions');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Waterproofing Solutions
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/ourserv');
+                      setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('accessories-equipment');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Accessories & Equipment
+                  </button>
+                </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/ourserv');
+                      setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('maintenance-repairs');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Maintenance & Repairs
+                  </button>
+                </li>
               </ul>
             </div>
 
@@ -447,10 +541,13 @@ const Footer = () => {
                     onClick={() => {
                       navigate('/top');
                       setTimeout(() => {
-                        const element = document.getElementById('infinity-edge-pools');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('infinity-edge-pools');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
                       }, 100);
                     }}
                     className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
@@ -463,10 +560,13 @@ const Footer = () => {
                     onClick={() => {
                       navigate('/top');
                       setTimeout(() => {
-                        const element = document.getElementById('rooftop-pools');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('rooftop-pools');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
                       }, 100);
                     }}
                     className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
@@ -479,10 +579,13 @@ const Footer = () => {
                     onClick={() => {
                       navigate('/top');
                       setTimeout(() => {
-                        const element = document.getElementById('overflow-pools');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('overflow-pools');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
                       }, 100);
                     }}
                     className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
@@ -495,10 +598,13 @@ const Footer = () => {
                     onClick={() => {
                       navigate('/top');
                       setTimeout(() => {
-                        const element = document.getElementById('skimmer-pools');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('skimmer-pools');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
                       }, 100);
                     }}
                     className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
@@ -511,10 +617,13 @@ const Footer = () => {
                     onClick={() => {
                       navigate('/top');
                       setTimeout(() => {
-                        const element = document.getElementById('spa-pools-and-jacuzzis');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('spa-pools-and-jacuzzis');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
                       }, 100);
                     }}
                     className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
@@ -527,10 +636,13 @@ const Footer = () => {
                     onClick={() => {
                       navigate('/top');
                       setTimeout(() => {
-                        const element = document.getElementById('kids-pools');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('kids-pools');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
                       }, 100);
                     }}
                     className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
@@ -543,10 +655,13 @@ const Footer = () => {
                     onClick={() => {
                       navigate('/top');
                       setTimeout(() => {
-                        const element = document.getElementById('olympic-and-semi-olympic-pools');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('olympic-and-semi-olympic-pools');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
                       }, 100);
                     }}
                     className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
@@ -559,10 +674,13 @@ const Footer = () => {
                     onClick={() => {
                       navigate('/top');
                       setTimeout(() => {
-                        const element = document.getElementById('plunge-pools');
-                        if (element) {
-                          element.scrollIntoView({ behavior: 'smooth' });
-                        }
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('plunge-pools');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
                       }, 100);
                     }}
                     className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
