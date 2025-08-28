@@ -15,14 +15,12 @@ declare global {
 
 interface FormErrors {
   name?: string;
-  email?: string;
   message?: string;
   submit?: string;
 }
 
 interface FormState {
   name: string;
-  email: string;
   message: string;
   submitting: boolean;
   submitted: boolean;
@@ -34,7 +32,6 @@ const Footer = () => {
   const navigate = useNavigate();
   const [state, setState] = useState<FormState>({
     name: '',
-    email: '',
     message: '',
     submitting: false,
     submitted: false,
@@ -49,11 +46,6 @@ const Footer = () => {
 
   // EmailJS is initialized in index.html
 
-  const validateEmail = (email: string): boolean => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     
@@ -64,11 +56,6 @@ const Footer = () => {
     const errors: FormErrors = {};
     if (!state.name.trim()) {
       errors.name = 'Name is required';
-    }
-    if (!state.email.trim()) {
-      errors.email = 'Email is required';
-    } else if (!validateEmail(state.email)) {
-      errors.email = 'Please enter a valid email address';
     }
     if (!state.message.trim()) {
       errors.message = 'Message is required';
@@ -82,78 +69,41 @@ const Footer = () => {
     setState(prev => ({ ...prev, submitting: true }));
 
     try {
-      // Check if EmailJS is loaded
-      if (typeof window === 'undefined' || !window.emailjs) {
-        throw new Error('EmailJS is not loaded. Please add the EmailJS script to your HTML.');
-      }
+      // Format the message for WhatsApp - using the exact format that works
+      const message = `Hello! I am interested in your swimming pool services.
 
-      // Create HTML formatted email content
-      const htmlContent = `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f9f9f9;">
-          <div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <div style="text-align: center; margin-bottom: 30px;">
-              <img src="/logo.png" alt="Swim Designers Logo" style="width: 60px; height: 60px; object-fit: contain;">
-              <h1 style="color: #1f2937; margin: 10px 0; font-size: 24px; font-weight: bold;">Swim Designers</h1>
-              <h2 style="color: #3b82f6; margin: 0; font-size: 20px; font-weight: 600;">New Contact Form Message</h2>
-            </div>
-            
-            <div style="background-color: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-              <div style="margin-bottom: 15px;">
-                <strong style="color: #374151; font-size: 16px;">👤 Name:</strong>
-                <p style="color: #1f2937; margin: 5px 0 0 0; font-size: 16px; font-weight: 500;">${state.name}</p>
-              </div>
-              
-              <div style="margin-bottom: 15px;">
-                <strong style="color: #374151; font-size: 16px;">📧 Email:</strong>
-                <p style="color: #1f2937; margin: 5px 0 0 0; font-size: 16px; font-weight: 500;">${state.email}</p>
-              </div>
-              
-              <div style="margin-bottom: 15px;">
-                <strong style="color: #374151; font-size: 16px;">💬 Message:</strong>
-                <p style="color: #1f2937; margin: 5px 0 0 0; font-size: 16px; line-height: 1.6; white-space: pre-wrap;">${state.message}</p>
-              </div>
-            </div>
-            
-            <div style="text-align: center; padding-top: 20px; border-top: 2px solid #e5e7eb;">
-              <p style="color: #6b7280; font-size: 14px; margin: 0;">
-                📅 Sent on: ${new Date().toLocaleString('en-US', { 
-                  year: 'numeric', 
-                  month: 'long', 
-                  day: 'numeric',
-                  hour: '2-digit',
-                  minute: '2-digit',
-                  timeZoneName: 'short'
-                })}
-              </p>
-              <p style="color: #9ca3af; font-size: 12px; margin: 10px 0 0 0;">
-                This message was sent via your website contact form at Swim Designers.
-              </p>
-            </div>
-          </div>
-        </div>
-      `;
+Name: ${state.name}
+Message: ${state.message}
 
-      // Send email using EmailJS with HTML content
-      const templateParams = {
-        user_name: state.name,
-        user_email: state.email,
-        message: state.message,
-        reply_to: state.email,
-        html_content: htmlContent
-      };
+I would like to discuss my pool requirements with you.`;
 
-      const result = await window.emailjs.send(
-        EMAIL_SERVICE_ID,
-        EMAIL_TEMPLATE_ID,
-        templateParams,
-        EMAIL_PUBLIC_KEY
-      );
-
-      console.log('Email sent successfully:', result.text);
+      // URL encode the message properly
+      const encodedMessage = encodeURIComponent(message);
       
+      // WhatsApp number in international format (no +, no leading zeros)
+      const whatsappNumber = '919176203070';
+      
+      // Create WhatsApp URL using the exact format that works
+      const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+      
+      // Debug: Log the URL to console
+      console.log('WhatsApp URL:', whatsappURL);
+      console.log('Original message:', message);
+      console.log('Encoded message:', encodedMessage);
+      
+      // Try to redirect to WhatsApp
+      const newWindow = window.open(whatsappURL, '_blank');
+      
+      // If the window doesn't open or there's an issue, try alternative encoding
+      if (!newWindow || newWindow.closed || typeof newWindow.closed === 'undefined') {
+        console.log('Trying alternative encoding...');
+        const alternativeUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message.replace(/\n/g, '%0A'))}`;
+        window.open(alternativeUrl, '_blank');
+      }
+      
+      // Reset form
       setState({
         name: '',
-        email: '',
         message: '',
         submitting: false,
         submitted: true,
@@ -166,11 +116,11 @@ const Footer = () => {
       }, 5000);
 
     } catch (error) {
-      console.error('EmailJS error:', error);
+      console.error('WhatsApp redirect error:', error);
       setState(prev => ({
         ...prev,
         submitting: false,
-        errors: { submit: 'Failed to send message. Please try again or contact us directly.' }
+        errors: { submit: 'Failed to redirect to WhatsApp. Please try again or contact us directly.' }
       }));
     }
   };
@@ -192,7 +142,7 @@ const Footer = () => {
             Let's Get in Touch
           </h2>
           <p className="text-gray-600 text-lg max-w-2xl mx-auto">
-            Fill out the form below and we'll get back to you as soon as possible.
+            Fill out the form below and we'll redirect you to WhatsApp to continue the conversation.
           </p>
         </div>
 
@@ -203,58 +153,55 @@ const Footer = () => {
               // Success Message
               <div className="text-center py-12">
                 <CheckCircle className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">Message Sent!</h3>
-                <p className="text-gray-600">Thank you for your message. We'll get back to you soon!</p>
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Redirecting to WhatsApp!</h3>
+                <p className="text-gray-600">Your message has been prepared and you should be redirected to WhatsApp. If not, please click the WhatsApp button below.</p>
+                <button
+                  onClick={() => {
+                    const message = `Hello! I am interested in your swimming pool services.
+
+Name: ${state.name}
+Message: ${state.message}
+
+I would like to discuss my pool requirements with you.`;
+                    const encodedMessage = encodeURIComponent(message);
+                    const whatsappNumber = '919176203070';
+                    
+                    // Create WhatsApp URL using the exact format that works
+                    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+                    window.open(whatsappURL, '_blank');
+                  }}
+                  className="mt-4 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                >
+                  Open WhatsApp
+                </button>
+
+
               </div>
             ) : (
               <form ref={form} className="space-y-6" onSubmit={handleSubmit}>
               <div className="space-y-2">
                 <label htmlFor="name" className="text-lg font-semibold text-gray-800">Name</label>
-                                  <input
-                    id="name"
-                    name="user_name" // EmailJS template variable
-                    type="text"
-                    required
-                    className={`bg-white flex h-12 w-full rounded-xl border px-4 py-3 text-sm outline-none transition-all duration-300 ${
-                      state.errors?.name 
-                        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20' 
-                        : 'border-gray-300 hover:border-blue-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20'
-                    }`}
-                    placeholder="Enter your name"
-                    value={state.name}
-                    onChange={(e) => setState({ ...state, name: e.target.value })}
-                  />
-                  {state.errors?.name && (
-                    <p className="mt-1 text-sm text-red-500 flex items-center">
-                      <AlertCircle className="w-4 h-4 mr-1" />
-                      {state.errors.name}
-                    </p>
-                  )}
+                <input
+                  id="name"
+                  name="user_name"
+                  type="text"
+                  required
+                  className={`bg-white flex h-12 w-full rounded-xl border px-4 py-3 text-sm outline-none transition-all duration-300 ${
+                    state.errors?.name 
+                      ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20' 
+                      : 'border-gray-300 hover:border-blue-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20'
+                  }`}
+                  placeholder="Enter your name"
+                  value={state.name}
+                  onChange={(e) => setState({ ...state, name: e.target.value })}
+                />
+                {state.errors?.name && (
+                  <p className="mt-1 text-sm text-red-500 flex items-center">
+                    <AlertCircle className="w-4 h-4 mr-1" />
+                    {state.errors.name}
+                  </p>
+                )}
               </div>
-
-                              <div className="space-y-2">
-                  <label htmlFor="email" className="text-lg font-semibold text-gray-800">Email</label>
-                  <input
-                    id="email"
-                    name="user_email" // EmailJS template variable
-                    placeholder="Enter your email"
-                    type="email"
-                    className={`bg-white flex h-12 w-full rounded-xl border px-4 py-3 text-sm outline-none transition-all duration-300 ${
-                      state.errors?.email 
-                        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-500/20' 
-                        : 'border-gray-300 hover:border-blue-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20'
-                    }`}
-                    required
-                    value={state.email}
-                    onChange={(e) => setState({ ...state, email: e.target.value })}
-                  />
-                  {state.errors?.email && (
-                    <p className="mt-1 text-sm text-red-500 flex items-center">
-                      <AlertCircle className="w-4 h-4 mr-1" />
-                      {state.errors.email}
-                    </p>
-                  )}
-                </div>
 
                               <div className="space-y-2">
                   <label htmlFor="message" className="text-lg font-semibold text-gray-800">Message</label>
@@ -300,7 +247,7 @@ const Footer = () => {
                       </>
                     ) : (
                       <>
-                        Send Message
+                        Send via WhatsApp
                         <Send className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
                       </>
                     )}
