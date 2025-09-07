@@ -635,6 +635,25 @@ I would like to discuss my pool requirements with you.`;
                     Plunge Pools
                   </button>
                 </li>
+                <li>
+                  <button 
+                    onClick={() => {
+                      navigate('/top');
+                      setTimeout(() => {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        setTimeout(() => {
+                          const element = document.getElementById('aqua-therapy-pools');
+                          if (element) {
+                            element.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }, 200);
+                      }, 100);
+                    }}
+                    className="text-gray-600 hover:text-blue-600 transition-colors text-sm text-left"
+                  >
+                    Aqua Therapy Pools
+                  </button>
+                </li>
               </ul>
             </div>
           </div>

@@ -92,22 +92,76 @@ const Services = () => {
 
   const clients = [
     { 
-      name: "Nature Resorts Pvt Ltd", 
-      logo: "NATURE RESORTS",
+      name: "Hotel Jungle Stay Madurai", 
+      logo: "HOTEL JUNGLE STAY",
       color: "text-green-600",
       bgColor: "bg-green-50"
     },
     { 
-      name: "Havelock Island Beach Resort", 
-      logo: "HAVELOCK ISLAND",
+      name: "Olympia Panache", 
+      logo: "OLYMPIA PANACHE",
       color: "text-blue-600",
       bgColor: "bg-blue-50"
     },
     { 
-      name: "Tubro Consultants", 
-      logo: "TUBRO CONSULTANTS",
+      name: "Delphi Public School", 
+      logo: "DELPHI PUBLIC SCHOOL",
       color: "text-purple-600",
       bgColor: "bg-purple-50"
+    },
+    { 
+      name: "Vijayam Institutions", 
+      logo: "VIJAYAM INSTITUTIONS",
+      color: "text-indigo-600",
+      bgColor: "bg-indigo-50"
+    },
+    { 
+      name: "Natwest Aura", 
+      logo: "NATWEST AURA",
+      color: "text-red-600",
+      bgColor: "bg-red-50"
+    },
+    { 
+      name: "Parampara Holiday Resort", 
+      logo: "PARAMPARA RESORT",
+      color: "text-orange-600",
+      bgColor: "bg-orange-50"
+    },
+    { 
+      name: "Navins Builders", 
+      logo: "NAVINS BUILDERS",
+      color: "text-teal-600",
+      bgColor: "bg-teal-50"
+    },
+    { 
+      name: "Vox Group", 
+      logo: "VOX GROUP",
+      color: "text-pink-600",
+      bgColor: "bg-pink-50"
+    },
+    { 
+      name: "Havelock Island Beach Resort", 
+      logo: "HAVELOCK ISLAND",
+      color: "text-cyan-600",
+      bgColor: "bg-cyan-50"
+    },
+    { 
+      name: "Amarprakash Builders", 
+      logo: "AMARPRAKASH BUILDERS",
+      color: "text-emerald-600",
+      bgColor: "bg-emerald-50"
+    },
+    { 
+      name: "Eurokids School", 
+      logo: "EUROKIDS SCHOOL",
+      color: "text-yellow-600",
+      bgColor: "bg-yellow-50"
+    },
+    { 
+      name: "Tubro Consultants", 
+      logo: "TUBRO CONSULTANTS",
+      color: "text-violet-600",
+      bgColor: "bg-violet-50"
     }
   ];
 

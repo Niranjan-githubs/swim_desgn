@@ -111,6 +111,35 @@ const AboutUs = () => {
         </div>
       </section>
 
+      {/* Budget Friendly Statement */}
+      <section className="py-24 max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-5xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+              BUDGET-FRIENDLY
+            </span>
+            <br />
+            AFFORDABLE POOLS
+          </h2>
+          <p className="text-xl leading-relaxed font-light">
+            Premium quality pools at competitive prices. We believe luxury shouldn't break the bank. 
+            Every pool we create delivers exceptional value without compromising on quality or design.
+          </p>
+        </motion.div>
+        <motion.img
+          src="/gallery/afford.jpg"
+          alt="Affordable Luxury Pool"
+          className="rounded-2xl shadow-xl"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        />
+      </section>
+
       {/* Values */}
       <section className="py-24 max-w-5xl mx-auto px-6 text-center">
         <h2 className="text-5xl font-bold mb-12">What Defines Us</h2>

@@ -112,6 +112,19 @@ const Top = () => {
         "Energy-efficient heating and cooling systems"
       ],
       image: "/Topools/plunge_pool.jpg"
+    },
+    {
+    
+      name: "Aqua Therapy Pools",
+      description: "Specialized therapeutic pools designed for rehabilitation and wellness treatments. These pools combine healing properties of water with advanced therapeutic features.",
+      bestFor: "Medical centers, rehabilitation facilities, and wellness resorts.",
+      features: [
+        "Temperature-controlled water for optimal therapy",
+        "Hydrotherapy jets for targeted muscle relief",
+        "Accessibility features for all mobility levels",
+        "Anti-microbial water treatment systems"
+      ],
+      image: "/Topools/aqua.jpg"
     }
   ];
 
@@ -198,7 +211,7 @@ const Top = () => {
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="text-center">
-              <div className="text-4xl font-bold text-blue-600 mb-2">8+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">9+</div>
               <div className="text-gray-600 font-medium">Pool Types</div>
             </div>
             <div className="text-center">

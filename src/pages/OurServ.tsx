@@ -56,13 +56,13 @@ const OurServ = () => {
     },
     {
       id: 3,
-      title: "Waterproofing Solutions",
-      description: "Protect your investment with advanced waterproofing techniques and long-lasting protection. Our specialized solutions ensure your pool remains leak-free and structurally sound for years to come.",
+      title: "Waterproofing Solutions & Tiles",
+      description: "Protect your investment with advanced waterproofing techniques and premium tile installations. Our specialized solutions ensure your pool remains leak-free, structurally sound, and beautifully finished for years to come.",
       features: [
         "Advanced leak prevention systems",
+        "Premium ceramic and mosaic tile installations",
         "Chemical-resistant protective coatings",
-        "Structural integrity protection",
-        "Extended warranty coverage"
+        "Custom tile designs and patterns"
       ],
       image: "/gallery/compressed/ocean-travel-modern-nobody-infinity.jpg",
       color: "from-orange-600 to-red-500",
@@ -84,13 +84,13 @@ const OurServ = () => {
     },
     {
       id: 5,
-      title: "Maintenance & Repairs",
-      description: "Keep your pool in pristine condition with our comprehensive maintenance and repair services. Our ongoing support ensures your pool always looks its best and operates at peak performance.",
+      title: "Renovation & Repairs",
+      description: "Transform your existing pool with our comprehensive renovation and repair services. From complete makeovers to essential repairs, we bring new life to your pool while maintaining peak performance.",
       features: [
-        "Regular maintenance and cleaning services",
-        "Emergency repair and troubleshooting",
-        "Water treatment and chemical balancing",
-        "Equipment servicing and upgrades"
+        "Complete pool renovation and remodeling",
+        "Tile replacement and surface refinishing",
+        "Equipment upgrades and modernization",
+        "Emergency repair and restoration services"
       ],
       image: "/gallery/compressed/hammocks-umbrellas-seen-from-pool.jpg",
       color: "from-pink-600 to-rose-500",

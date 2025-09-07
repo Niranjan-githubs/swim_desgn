@@ -66,11 +66,15 @@ const ProjectMap = () => {
         { name: "Pudukottai", lat: 10.3826, lng: 78.8214, state: "Tamil Nadu" },
         { name: "Sivakasi", lat: 9.4491, lng: 77.7975, state: "Tamil Nadu" },
         { name: "Kumbakonam", lat: 10.9595, lng: 79.3782, state: "Tamil Nadu" },
+        { name: "Dharmapuri", lat: 12.1277, lng: 78.1579, state: "Tamil Nadu" },
+        { name: "Kodaikanal", lat: 10.2381, lng: 77.4892, state: "Tamil Nadu" },
+        { name: "Theni", lat: 10.0104, lng: 77.4768, state: "Tamil Nadu" },
 
         // Andhra Pradesh
         { name: "Chittoor", lat: 13.2172, lng: 79.1003, state: "Andhra Pradesh" },
         { name: "Tirupati", lat: 13.6288, lng: 79.4192, state: "Andhra Pradesh" },
         { name: "Vijayawada", lat: 16.5062, lng: 80.6337, state: "Andhra Pradesh" },
+        { name: "Hyderabad", lat: 17.3850, lng: 78.4867, state: "Telangana" },
 
         // Karnataka
         { name: "Bengaluru", lat: 12.9716, lng: 77.5946, state: "Karnataka" },
