@@ -1,7 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Palette, Wrench, Droplets, Shield, Sparkles, Settings, ArrowRight, Star, Award, Users, Clock } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Palette, Wrench, Droplets, Shield, Sparkles, Settings, Star, Award, Users, Clock } from 'lucide-react';
 import FlowingMenu from './FlowingMenu';
-import { InfiniteSlider } from './core/infinite-slider';
 
 const Services = () => {
   const [activeService, setActiveService] = useState(0);
@@ -90,80 +89,75 @@ const Services = () => {
     }
   ];
 
-  const clients = [
+
+  // Only include clients with confirmed working images
+  const allClients = [
     { 
       name: "Hotel Jungle Stay Madurai", 
-      logo: "HOTEL JUNGLE STAY",
+      logo: "/logo/image 1.png",
       color: "text-green-600",
       bgColor: "bg-green-50"
     },
     { 
       name: "Olympia Panache", 
-      logo: "OLYMPIA PANACHE",
+      logo: "/logo/image 2.png",
       color: "text-blue-600",
       bgColor: "bg-blue-50"
     },
     { 
       name: "Delphi Public School", 
-      logo: "DELPHI PUBLIC SCHOOL",
+      logo: "/logo/Image 3.png",
       color: "text-purple-600",
       bgColor: "bg-purple-50"
     },
     { 
       name: "Vijayam Institutions", 
-      logo: "VIJAYAM INSTITUTIONS",
+      logo: "/logo/image 4.png",
       color: "text-indigo-600",
       bgColor: "bg-indigo-50"
     },
     { 
       name: "Natwest Aura", 
-      logo: "NATWEST AURA",
+      logo: "/logo/image 5.png",
       color: "text-red-600",
       bgColor: "bg-red-50"
     },
     { 
       name: "Parampara Holiday Resort", 
-      logo: "PARAMPARA RESORT",
+      logo: "/logo/image 6.png",
       color: "text-orange-600",
       bgColor: "bg-orange-50"
     },
     { 
-      name: "Navins Builders", 
-      logo: "NAVINS BUILDERS",
-      color: "text-teal-600",
-      bgColor: "bg-teal-50"
-    },
-    { 
       name: "Vox Group", 
-      logo: "VOX GROUP",
+      logo: "/logo/image 8.png",
       color: "text-pink-600",
       bgColor: "bg-pink-50"
     },
     { 
       name: "Havelock Island Beach Resort", 
-      logo: "HAVELOCK ISLAND",
+      logo: "/logo/image 9.png",
       color: "text-cyan-600",
       bgColor: "bg-cyan-50"
     },
     { 
-      name: "Amarprakash Builders", 
-      logo: "AMARPRAKASH BUILDERS",
-      color: "text-emerald-600",
-      bgColor: "bg-emerald-50"
-    },
-    { 
-      name: "Eurokids School", 
-      logo: "EUROKIDS SCHOOL",
-      color: "text-yellow-600",
-      bgColor: "bg-yellow-50"
-    },
-    { 
-      name: "Tubro Consultants", 
-      logo: "TUBRO CONSULTANTS",
+      name: "Trusted Partner", 
+      logo: "/logo/thumb.jpg",
       color: "text-violet-600",
       bgColor: "bg-violet-50"
+    },
+    { 
+      name: "Premium Client", 
+      logo: "/logo/Screenshot 2025-09-10 161352.png",
+      color: "text-emerald-600",
+      bgColor: "bg-emerald-50"
     }
   ];
+
+  // Use only the confirmed working clients
+  const clients = allClients;
+  
+  console.log(`Displaying ${clients.length} client logos:`, clients.map(c => c.name));
 
   // Scramble effect function - only numbers
   const scrambleText = (text: string) => {
@@ -370,10 +364,24 @@ const Services = () => {
               {/* First set of logos */}
               {clients.map((client, index) => (
                 <div key={`first-${index}`} className="flex-shrink-0 group">
-                  <div className="flex items-center justify-center h-12 sm:h-14 md:h-16 px-4 sm:px-6 md:px-8 bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white">
-                    <div className={`text-sm sm:text-base md:text-lg font-bold tracking-wide ${client.color} group-hover:scale-110 transition-transform duration-300`}>
-                      {client.logo}
-                    </div>
+                  <div className="flex items-center justify-center h-16 sm:h-20 md:h-24 w-24 sm:w-28 md:w-32 bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white p-2 sm:p-3">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="max-h-full max-w-full w-auto h-auto object-contain group-hover:scale-110 transition-transform duration-300"
+                      style={{ aspectRatio: 'auto' }}
+                      onError={(e) => {
+                        console.log(`Failed to load image: ${client.logo} for client: ${client.name}`);
+                        // Remove the entire client container
+                        const container = e.currentTarget.closest('.flex-shrink-0') as HTMLElement;
+                        if (container) {
+                          container.style.display = 'none';
+                        }
+                      }}
+                      onLoad={() => {
+                        console.log(`Successfully loaded image: ${client.logo} for client: ${client.name}`);
+                      }}
+                    />
                   </div>
                 </div>
               ))}
@@ -381,10 +389,24 @@ const Services = () => {
               {/* Duplicate set for seamless infinite scroll */}
               {clients.map((client, index) => (
                 <div key={`second-${index}`} className="flex-shrink-0 group">
-                  <div className="flex items-center justify-center h-12 sm:h-14 md:h-16 px-4 sm:px-6 md:px-8 bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white">
-                    <div className={`text-sm sm:text-base md:text-lg font-bold tracking-wide ${client.color} group-hover:scale-110 transition-transform duration-300`}>
-                      {client.logo}
-                    </div>
+                  <div className="flex items-center justify-center h-16 sm:h-20 md:h-24 w-24 sm:w-28 md:w-32 bg-white/80 backdrop-blur-sm border border-gray-200/50 rounded-xl sm:rounded-2xl shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 hover:bg-white p-2 sm:p-3">
+                    <img 
+                      src={client.logo} 
+                      alt={client.name}
+                      className="max-h-full max-w-full w-auto h-auto object-contain group-hover:scale-110 transition-transform duration-300"
+                      style={{ aspectRatio: 'auto' }}
+                      onError={(e) => {
+                        console.log(`Failed to load image: ${client.logo} for client: ${client.name}`);
+                        // Remove the entire client container
+                        const container = e.currentTarget.closest('.flex-shrink-0') as HTMLElement;
+                        if (container) {
+                          container.style.display = 'none';
+                        }
+                      }}
+                      onLoad={() => {
+                        console.log(`Successfully loaded image: ${client.logo} for client: ${client.name}`);
+                      }}
+                    />
                   </div>
                 </div>
               ))}

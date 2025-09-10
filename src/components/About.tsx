@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { HoverExpand } from '../ui/hover-expand';
 
 const About = () => {
@@ -17,32 +17,28 @@ const About = () => {
 
   const reviews = [
     {
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face",
+      image: "/reviews/rev 1.jpg",
       text: "Swim Designers provided excellent services and technical support throughout our project. They delivered a beautiful pool that exceeded our expectations. Overall a great experience!"
     },
     {
-      image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&h=300&fit=crop&crop=face",
+      image: "/reviews/rev 2.jpg",
       text: "Veni Ent completed our pool project with outstanding workmanship. The team was professional, punctual, and delivered exactly what was promised. Highly recommend their services!"
     },
     {
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=300&fit=crop&crop=face",
+      image: "/reviews/ee.jpg",
       text: "Veni Ent designed, supplied, erected, installed and commissioned our infinity pool. They are very good in quality, sticking to design, timely delivery, and prompt after sales service support."
     },
     {
-      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=300&fit=crop&crop=face",
+      image: "/reviews/ee 2.jpg",
       text: "Swim Designers delivered an excellent pool design and construction for our resort. The team was highly professional and delivered exactly what we envisioned. Perfect execution!"
     },
     {
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=300&fit=crop&crop=face",
+      image: "/reviews/ee3.jpg",
       text: "Veni Ent's work quality and attention to detail was amazing. Our rooftop pool turned out better than expected! The team was professional and completed the project on time."
     },
     {
-      image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=300&fit=crop&crop=face",
+      image: "/reviews/ee4.jpg",
       text: "Swim Designers provided outstanding service from start to finish. Their expertise in pool construction and design is unmatched. Highly recommend for anyone looking for quality work!"
-    },
-    {
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=300&fit=crop&crop=face",
-      text: "From concept to completion, Swim Designers exceeded every expectation. The infinity pool they created is absolutely stunning and has become the centerpiece of our resort. Highly professional team!"
     }
   ];
 
@@ -71,7 +67,7 @@ const About = () => {
             initialSelectedIndex={0}
             thumbnailHeight={300}
             modalImageSize={500}
-            maxThumbnails={7}
+            maxThumbnails={6}
           />
         </div>
       </div>
@@ -104,7 +100,7 @@ const About = () => {
               initialSelectedIndex={0}
               thumbnailHeight={300}
               modalImageSize={500}
-              maxThumbnails={7}
+              maxThumbnails={6}
             />
           </div>
         </div>
